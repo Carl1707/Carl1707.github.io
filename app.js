@@ -171,9 +171,67 @@
     });
   }
 
+  function setUpOceanMotion() {
+    const field = $("#ocean-field");
+    const rippleField = $("#ripple-field");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (!field || !rippleField || reducedMotion.matches) {
+      return;
+    }
+
+    let lastWakeAt = 0;
+    let frameRequested = false;
+    let targetX = window.innerWidth * 0.72;
+    let targetY = window.innerHeight * 0.28;
+
+    const paintTide = () => {
+      const relativeX = (targetX / window.innerWidth - 0.5) * 42;
+      const relativeY = (targetY / window.innerHeight - 0.5) * 18;
+      field.style.setProperty("--tide-x", `${targetX}px`);
+      field.style.setProperty("--tide-y", `${targetY}px`);
+      field.style.setProperty("--wave-shift", `${relativeX}px`);
+      field.style.setProperty("--wave-lift", `${relativeY}px`);
+      frameRequested = false;
+    };
+
+    const moveTide = (event) => {
+      targetX = event.clientX;
+      targetY = event.clientY;
+      if (!frameRequested) {
+        window.requestAnimationFrame(paintTide);
+        frameRequested = true;
+      }
+    };
+
+    const releaseRipple = (x, y, gentle) => {
+      const ripple = document.createElement("span");
+      ripple.className = gentle ? "tide-ripple gentle" : "tide-ripple";
+      ripple.style.setProperty("--ripple-x", `${x}px`);
+      ripple.style.setProperty("--ripple-y", `${y}px`);
+      rippleField.appendChild(ripple);
+      ripple.addEventListener("animationend", () => ripple.remove(), { once: true });
+    };
+
+    document.addEventListener("pointermove", (event) => {
+      moveTide(event);
+      const now = window.performance.now();
+      if (event.pointerType === "mouse" && now - lastWakeAt > 170) {
+        releaseRipple(event.clientX, event.clientY, true);
+        lastWakeAt = now;
+      }
+    });
+    document.addEventListener("pointerdown", (event) => {
+      moveTide(event);
+      releaseRipple(event.clientX, event.clientY, false);
+    });
+
+    paintTide();
+  }
+
   renderProfile();
   renderData();
   setUpEasterEgg();
   setUpTheme();
+  setUpOceanMotion();
   setText("#year", new Date().getFullYear());
 })();

@@ -19,6 +19,13 @@
     <script src="app.js" defer></script>
   </head>
   <body>
+    <div class="ocean-field" id="ocean-field" aria-hidden="true">
+      <div class="cursor-tide"></div>
+      <span class="wave-plane wave-plane-far"></span>
+      <span class="wave-plane wave-plane-mid"></span>
+      <span class="wave-plane wave-plane-near"></span>
+      <div class="ripple-field" id="ripple-field"></div>
+    </div>
     <div class="atmosphere atmosphere-one" aria-hidden="true"></div>
     <div class="atmosphere atmosphere-two" aria-hidden="true"></div>
     <div class="atmosphere atmosphere-three" aria-hidden="true"></div>
@@ -54,6 +61,7 @@
           <div class="intro-lines" id="intro-lines"></div>
           <div class="tags" id="tags" aria-label="个人标签"></div>
           <a class="soft-button" href="#data">翻开我的数据菜单</a>
+          <p class="tide-hint"><span aria-hidden="true"></span>移动光标或轻点页面，拨动一圈潮汐</p>
         </div>
 
         <div class="portrait-card glass reveal delay-one">
