@@ -1,0 +1,27 @@
+<svg width="720" height="765" viewBox="0 0 720 765" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="background" x1="68" y1="30" x2="671" y2="731" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5EADD"/>
+      <stop offset="1" stop-color="#D9E2D9"/>
+    </linearGradient>
+    <linearGradient id="sweater" x1="232" y1="527" x2="506" y2="765" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#AABDAC"/>
+      <stop offset="1" stop-color="#708D7C"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="765" rx="48" fill="url(#background)"/>
+  <circle cx="125" cy="152" r="80" fill="#E8C9BD" fill-opacity=".45"/>
+  <path d="M594 98C649 138 668 204 643 250C616 301 541 295 500 254C454 207 463 152 499 113C524 87 564 76 594 98Z" fill="#B4C8B6" fill-opacity=".48"/>
+  <path d="M145 684C204 619 245 565 360 556C476 547 544 599 588 684V765H145V684Z" fill="url(#sweater)"/>
+  <ellipse cx="362" cy="356" rx="151" ry="176" fill="#F1D2BE"/>
+  <path d="M220 361C190 243 247 163 357 159C472 155 535 244 500 371L470 315C456 298 443 272 429 246C366 291 317 310 245 308L220 361Z" fill="#59615D"/>
+  <path d="M232 290C225 357 231 407 255 451C218 425 192 380 190 330C188 277 208 227 245 195L232 290Z" fill="#59615D"/>
+  <circle cx="306" cy="357" r="8" fill="#535A56"/>
+  <circle cx="415" cy="357" r="8" fill="#535A56"/>
+  <path d="M335 418C351 429 369 430 386 418" stroke="#C48679" stroke-width="8" stroke-linecap="round"/>
+  <path d="M286 502C309 530 332 543 362 543C391 543 414 531 440 501V578H286V502Z" fill="#EDC7B2"/>
+  <path d="M361 615L304 563L269 581L309 674L361 615Z" fill="#FBF7EE"/>
+  <path d="M361 615L418 563L453 581L412 674L361 615Z" fill="#FBF7EE"/>
+  <path d="M538 616C557 596 584 589 605 603C628 618 624 650 604 667L558 705L521 665L538 616Z" fill="#D5AD9F" fill-opacity=".8"/>
+  <text x="360" y="716" text-anchor="middle" fill="#FBF7EE" font-size="20" font-family="Arial, sans-serif" letter-spacing="4">YOUR PORTRAIT</text>
+</svg>
