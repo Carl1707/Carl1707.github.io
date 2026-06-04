@@ -3,158 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="一间收集日常数据、兴趣与微小惊喜的个人主页。"
-    />
-    <title>我的数据小馆 | 个人主页</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="content.js" defer></script>
-    <script src="app.js" defer></script>
+    <meta name="robots" content="noindex, nofollow" />
+    <title></title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: #fff;
+      }
+    </style>
   </head>
-  <body>
-    <div class="ocean-field" id="ocean-field" aria-hidden="true">
-      <div class="cursor-tide"></div>
-      <span class="wave-plane wave-plane-far"></span>
-      <span class="wave-plane wave-plane-mid"></span>
-      <span class="wave-plane wave-plane-near"></span>
-      <div class="ripple-field" id="ripple-field"></div>
-    </div>
-    <div class="atmosphere atmosphere-one" aria-hidden="true"></div>
-    <div class="atmosphere atmosphere-two" aria-hidden="true"></div>
-    <div class="atmosphere atmosphere-three" aria-hidden="true"></div>
-
-    <header class="topbar glass">
-      <a class="brand" href="#home" aria-label="返回首页">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>
-          <strong>我的数据小馆</strong>
-          <small>soft archive of me</small>
-        </span>
-      </a>
-      <nav class="nav-links" aria-label="页面导航">
-        <a href="#story">关于我</a>
-        <a href="#data">小数据</a>
-        <a href="#surprise">彩蛋</a>
-      </nav>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换光线氛围">
-        <span aria-hidden="true">☼</span>
-        <span class="toggle-label">黄昏</span>
-      </button>
-    </header>
-
-    <main id="home">
-      <section class="hero section" id="story">
-        <div class="hero-copy glass reveal">
-          <p class="eyebrow">欢迎光临 · 今日营业中</p>
-          <h1>
-            <span id="greeting">你好，我是</span>
-            <span class="nickname" id="nickname">你的昵称</span>
-          </h1>
-          <p class="role" id="role">你的专业 · 你的年级</p>
-          <div class="intro-lines" id="intro-lines"></div>
-          <div class="tags" id="tags" aria-label="个人标签"></div>
-          <a class="soft-button" href="#data">翻开我的数据菜单</a>
-          <p class="tide-hint"><span aria-hidden="true"></span>移动光标或轻点页面，拨动一圈潮汐</p>
-        </div>
-
-        <div class="portrait-card glass reveal delay-one">
-          <div class="portrait-note">
-            <span>馆主名片</span>
-            <span class="status-dot">online</span>
-          </div>
-          <img
-            class="portrait"
-            id="portrait"
-            src="assets/avatar-placeholder.svg"
-            alt="可替换的个人代表图片"
-          />
-          <div class="portrait-caption">
-            <p id="photo-caption">换成一张真正代表你的图片</p>
-            <button class="tiny-action" id="portrait-prompt" type="button">点我听一句话</button>
-          </div>
-          <p class="portrait-message" id="portrait-message" aria-live="polite"></p>
-        </div>
-      </section>
-
-      <section class="section data-section" id="data">
-        <div class="section-heading reveal">
-          <p class="eyebrow">DATA MENU · 一份真实的小切片</p>
-          <h2 id="data-title">我的一周专注时长</h2>
-          <p id="data-description"></p>
-        </div>
-
-        <div class="data-grid">
-          <article class="chart-card glass reveal">
-            <div class="chart-meta">
-              <div>
-                <p class="meta-label" id="dataset-label">示例数据</p>
-                <p class="chart-unit" id="chart-unit">单位：小时</p>
-              </div>
-              <span class="draft-pill" id="data-status">请替换真实数据</span>
-            </div>
-            <div class="bar-chart" id="bar-chart" role="img" aria-label="个人数据柱状图"></div>
-          </article>
-
-          <aside class="data-sidebar">
-            <div class="stats" id="stats"></div>
-            <article class="insight-card glass reveal delay-one">
-              <p class="meta-label">我的观察</p>
-              <ul id="insights"></ul>
-            </article>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section surprise-section" id="surprise">
-        <div class="surprise-card glass reveal">
-          <div class="section-heading compact">
-            <p class="eyebrow">SECRET ORDER · 互动彩蛋</p>
-            <h2 id="egg-title">今日隐藏菜单</h2>
-            <p id="egg-description"></p>
-          </div>
-
-          <div class="tea-scene">
-            <button class="tea-button" id="tea-button" type="button" aria-label="点击茶杯抽取一张隐藏便签">
-              <span class="steam steam-one" aria-hidden="true"></span>
-              <span class="steam steam-two" aria-hidden="true"></span>
-              <span class="cup">
-                <span class="tea"></span>
-                <span class="handle"></span>
-              </span>
-              <span class="saucer"></span>
-            </button>
-            <div class="ticket" id="ticket" aria-live="polite">
-              <p class="ticket-label">馆主悄悄话</p>
-              <p id="ticket-message">轻点杯沿，领取今日限定便签。</p>
-            </div>
-          </div>
-          <p class="unlock-tip" id="unlock-tip">连续点几次，也许会发生一点小事。</p>
-          <div class="petal-field" id="petal-field" aria-hidden="true"></div>
-        </div>
-      </section>
-
-      <section class="section edit-note reveal">
-        <div class="note-card">
-          <p class="eyebrow">CUSTOMIZE · 留给未来的我</p>
-          <h2>这间小馆可以随你改造</h2>
-          <p>
-            简介、标签、可视化数据和彩蛋文案都集中在
-            <code>content.js</code>。替换头像文件、调整颜色变量，主页便会长成你的样子。
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <p><span id="footer-name">你的昵称</span> 的数据小馆 · <span id="year"></span></p>
-      <p class="footer-whisper">真实数据，轻柔表达。</p>
-    </footer>
-  </body>
+  <body></body>
 </html>
